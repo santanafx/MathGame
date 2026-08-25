@@ -114,6 +114,7 @@ void MathOperation5()
 }
 do
 {
+  Console.Clear();
   System.Console.WriteLine("======================");
   System.Console.WriteLine($"Score: {globalScore}");
   System.Console.WriteLine("----------------------");
