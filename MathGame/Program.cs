@@ -76,22 +76,66 @@ void MathOperation3()
     System.Console.WriteLine("The answer is wrong. Try again.");
   }
 }
+void MathOperation4()
+{
+  System.Console.WriteLine("Type your answer:");
+  string? res4 = Console.ReadLine();
+
+  int.TryParse(res4, out int res4Converted);
+
+  if (res4Converted == 2)
+  {
+    System.Console.WriteLine("The result 2 is correct");
+    history.Add("10 / 5 = 2");
+    globalScore++;
+  }
+  else
+  {
+    System.Console.WriteLine("The answer is wrong. Try again.");
+  }
+}
+void MathOperation5()
+{
+  System.Console.WriteLine("Type your answer:");
+  string? res5 = Console.ReadLine();
+
+  int.TryParse(res5, out int res5Converted);
+
+  if (res5Converted == 21)
+  {
+    System.Console.WriteLine("The result 21 is correct");
+    history.Add("7 x 3 = 21");
+    globalScore++;
+  }
+  else
+  {
+    System.Console.WriteLine("The answer is wrong. Try again.");
+  }
+}
 do
 {
+  System.Console.WriteLine("======================");
   System.Console.WriteLine($"Score: {globalScore}");
+  System.Console.WriteLine("----------------------");
   System.Console.WriteLine($"History:");
+  System.Console.WriteLine("----------------------");
   foreach (string obj in history)
   {
     System.Console.WriteLine(obj);
   }
-
-  System.Console.WriteLine("Choose the desired option to solve");
-  System.Console.WriteLine("To close the application type exit and press enter");
-  menuRes = Console.ReadLine();
-
+  System.Console.WriteLine("----------------------");
   System.Console.WriteLine("1 - What's the result of 9 x 9 = ?");
   System.Console.WriteLine("2 - What is the result of 2 x 2 = ?");
   System.Console.WriteLine("3 - What is the result of 4 / 2 = ?");
+  System.Console.WriteLine("4 - What is the result of 10 / 5 = ?");
+  System.Console.WriteLine("5 - What is the result of 7 x 3 = ?");
+
+  System.Console.WriteLine("Choose the desired option to solve");
+  System.Console.WriteLine("----------------------");
+  System.Console.WriteLine("To close the application type exit and press enter");
+  System.Console.WriteLine("======================");
+  menuRes = Console.ReadLine();
+
   if (menuRes == "1")
   {
     MathOperation1();
@@ -103,5 +147,13 @@ do
   else if (menuRes == "3")
   {
     MathOperation3();
+  }
+  else if (menuRes == "4")
+  {
+    MathOperation4();
+  }
+  else if (menuRes == "5")
+  {
+    MathOperation5();
   }
 } while (menuRes != "exit");
